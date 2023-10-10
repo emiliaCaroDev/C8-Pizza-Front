@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root{
+    /*============== Colors ===================*/
+        --primer-color:#222222;
+        --body-color:#F3F3F3;
+        --titulo-color:#FC200C;
+        --text-color:#39B24A;
+        --text-color-2:#FFFFFF;
+    
+    
+    /*============ Font & Typoghrapy =================================*/    
+        --body-font: 'Roboto', sans-serif;
+        --h2-font-size: 1.8rem;
+        --normal-font-size: 1.6rem;
+        --small-font-size: 1.4rem;
+        --smaller-font-size: 1.2rem;
+    
+    /*==============  Font weight =========================*/
+        --regular-font-weight: 400;
+        --medium-font-weight: 500;
+        --semi-bold-font-weight: 600;
+        --bold-font-weight: 700;
+    
+    }
+
+
+/*===================  BASE  ========================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    width: 100%
+}
+
+body{
+    background-color: var(--body-color);
+    font-family: var(--body-font);
+    color:var(--text-color-2)
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/*====================  FLEXBOX  ==========================*/
+/******************** row-space_between-center ***************************/
+.logo, header,.podio-pizza div,footer, .enlaces-header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/******************** column-center-center ***************************/
+
+.podio-pizza, .enlaces-footer, main, main section, .lista-top-pizzas{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/*========= BREAKPOINTS =========*/
+/************** Mobile *************/
+
+/*************** HEADER ****************/
+
+header, footer{
+    background-color: var(--primer-color);
+    padding: 10px 20px;    
+}
+
+.logo{
+    justify-content: flex-start;
+    gap:4px;
+}
+
+.logo div{
+    width: 60px;
+}
+
+.titulo{
+    font-size: 2.5rem;
+}
+
+.text-1{
+    color:var(--text-color);
+}
+
+.text-2{
+    color:var(--titulo-color);
+}
+
+.top-navbar{
+    display: none;
+}
+
+.fa-bars{
+    font-size: 2rem;
+    font-weight: var(--semi-bold-font-weight);
+}
+
+/*************** MAIN ****************/
+
+main{
+    width: 95vw;
+    margin: 0 auto;
+    background-color: var(--body-color);
+    padding: 20px 10px;
+}
+
+
+main section{
+    margin: 25px auto;
+    width: 100%;
+}
+
+.podio-pizza{
+    background-color: var(--text-color-2);
+    border-radius: 6px;
+}
+
+.podio-pizza div{
+    justify-content: center;
+    gap:30px;
+    height: 50vh;
+    width: 100%;
+}
+
+.podio-pizza h2{
+    padding-top:  30px;
+}
+
+h2{
+    font-size: var(--h2-font-size);
+}
+
+.podio-pizza h3, .podio-pizza li{
+    color:var(--primer-color);
+    font-weight: var(--semi-bold-font-weight);
+    font-size:var(--small-font-size)
+}
+
+.podio-pizza h3{
+    font-size: 1.5rem;
+    font-weight: var(--bold-font-weight);
+    margin-bottom: 25px;
+}
+
+.lista-top-pizzas{
+    margin-top: 10px;
+    gap:8px;
+    align-items: flex-start;
+}
+
+
+/****************** Section pizza delivery**************************/
+.pizza-delivery{
+    width: 321px;
+    height: 50vh;
+    background-image: url("../img/delivery.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+}
+
+.pizza-delivery h2{
+    text-align: center;
+    padding: 15px;
+}
+
+/*************** FOOTER ****************/
+.enlaces-footer{
+    gap:5px;
+    align-items: flex-start;
+}
+
+.enlaces-footer a{
+    color:var(--text-color-2);
+    font-weight: var(--regular-font-weight);
+    font-size: var(--smaller-font-size);
+}
+
+.bottom-navbar{
+    order: 1;
+}
+
+footer .logo div{
+    width: 50px;
+}
+
+footer .titulo{
+    font-size: 1.8rem;
+}
+
+.promocion{
+    order:3
+}
+
+.ranking{
+    order: 2;
+}
+/************** Desktop *************/
+@media(min-width:1024px){
+    header,footer{
+        padding: 15px 25px; 
+    }
+    
+    h2{
+        font-size: 2.6rem;
+    }
+
+    .logo div{
+        width: 80px;
+    }
+
+    .titulo{
+        font-size: 3rem;
+    }
+
+    .top-navbar{
+        display: flex;
+    }
+
+    .enlaces-header{
+        gap: 20px;
+    }
+
+    .enlaces-header a{
+        color: var(--text-color-2);
+        font-weight: var(--regular-font-weight);
+        font-size: var(--normal-font-size);
+
+    }
+    
+    .burguer-menu{
+        display: none;
+    }
+
+/*************** MAIN ****************/
+    main{
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        gap:18px;
+    }
+
+    .podio-pizza, main section{
+        width: 48%;
+    }
+
+    .pizza-delivery{
+        width: 100%;
+        height: 60vh;
+    }
+
+    .podio-pizza article img{
+        width: 100px;
+    }
+
+    .podio-pizza h3, .podio-pizza li{
+        font-size: 1.8rem;
+    }
+
+    .podio-pizza h3{
+        font-size: 1.9rem;
+        font-weight: var(--bold-font-weight);
+    }
+
+    .lista-top-pizzas{
+        gap:8px;
+        align-items: flex-start;
+    }
+    
+
+/*************** FOOTER ****************/  
+footer{
+        flex-direction: row-reverse;
+    }
+
+    .enlaces-footer{
+        gap:12px;
+        align-items: flex-start;
+    }
+
+    .enlaces-footer a{
+        font-weight: var(--regular-font-weight);
+        font-size: var(--normal-font-size);
+    }
+
+    footer .logo{
+        gap:45px;
+    }
+
+    footer .logo img{
+        width: 90px;
+    }
+
+    footer .logo h1{
+        font-size: 2.5rem;
+    }
+}
